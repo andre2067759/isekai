@@ -1,3 +1,4 @@
+
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
@@ -9,7 +10,7 @@
     }
   ],
   "result": {
-    "item": "isekai:isekai:aether_crystal",
+    "item": "isekai:aether_crystal",
     "count": 1
   }
 }
