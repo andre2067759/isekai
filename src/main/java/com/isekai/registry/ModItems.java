@@ -1,7 +1,9 @@
 package com.isekai.registry;
 
 import com.isekai.IsekaiMod;
-import com.isekai.item.AetherTier;\nimport com.isekai.item.AetherArmorMaterial;\nimport com.isekai.registry.ModEntities;
+import com.isekai.item.AetherTier;
+import com.isekai.item.AetherArmorMaterial;
+import com.isekai.registry.ModEntities;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
