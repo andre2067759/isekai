@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "isekai:raw_aether"
+    },
+    "title": {
+      "translate": "advancements.isekai.first_aether.title"
+    },
+    "description": {
+      "translate": "advancements.isekai.first_aether.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "found": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "isekai:raw_aether"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "parent": "isekai:relic_smith",
+  "display": {
+    "icon": {
+      "item": "isekai:aether_chestplate"
+    },
+    "title": {
+      "translate": "advancements.isekai.aether_guardian.title"
+    },
+    "description": {
+      "translate": "advancements.isekai.aether_guardian.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "crafted": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "isekai:aether_chestplate"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

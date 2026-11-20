@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "isekai:sun_aether_block"
+    }
+  ],
+  "result": {
+    "item": "isekai:sun_aether_ingot",
+    "count": 9
+  }
+}

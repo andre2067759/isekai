@@ -1,0 +1,27 @@
+{
+  "parent": "isekai:aether_guardian",
+  "display": {
+    "icon": {
+      "item": "isekai:aether_crystal"
+    },
+    "title": {
+      "translate": "advancements.isekai.sentinel_hunter.title"
+    },
+    "description": {
+      "translate": "advancements.isekai.sentinel_hunter.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "defeated": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "isekai:aether_sentinel"
+        }
+      }
+    }
+  }
+}

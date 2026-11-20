@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " SA",
+    "S A",
+    " SA"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "A": {
+      "item": "isekai:aether_shard"
+    }
+  },
+  "result": {
+    "item": "isekai:aether_bow"
+  }
+}

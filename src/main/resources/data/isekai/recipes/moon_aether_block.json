@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "isekai:moon_aether_ingot"
+    }
+  },
+  "result": {
+    "item": "isekai:moon_aether_block",
+    "count": 1
+  }
+}

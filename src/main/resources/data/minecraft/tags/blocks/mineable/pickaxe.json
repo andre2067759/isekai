@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "isekai:aether_ore",
+    "isekai:deepslate_aether_ore",
+    "isekai:aether_block",
+    "isekai:raw_aether_block",
+    "isekai:sun_aether_block",
+    "isekai:moon_aether_block"
+  ]
+}

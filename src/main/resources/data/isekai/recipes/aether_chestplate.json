@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "M M",
+    "MMM",
+    "MMM"
+  ],
+  "key": {
+    "M": {
+      "item": "isekai:aether_ingot"
+    }
+  },
+  "result": {
+    "item": "isekai:aether_chestplate"
+  }
+}

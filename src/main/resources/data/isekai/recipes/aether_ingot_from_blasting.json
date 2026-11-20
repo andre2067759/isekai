@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "isekai:raw_aether"
+  },
+  "result": "isekai:aether_ingot",
+  "experience": 0.7,
+  "cookingtime": 100
+}

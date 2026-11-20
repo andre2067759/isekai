@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "isekai:aether_shard"
+    },
+    {
+      "item": "isekai:aether_shard"
+    },
+    {
+      "item": "isekai:aether_shard"
+    },
+    {
+      "item": "isekai:aether_shard"
+    }
+  ],
+  "result": {
+    "item": "isekai:aether_ingot",
+    "count": 1
+  }
+}

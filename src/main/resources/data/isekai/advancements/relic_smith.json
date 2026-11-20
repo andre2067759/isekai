@@ -1,0 +1,31 @@
+{
+  "parent": "isekai:refined_power",
+  "display": {
+    "icon": {
+      "item": "isekai:aether_sword"
+    },
+    "title": {
+      "translate": "advancements.isekai.relic_smith.title"
+    },
+    "description": {
+      "translate": "advancements.isekai.relic_smith.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "crafted": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "isekai:aether_sword"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
