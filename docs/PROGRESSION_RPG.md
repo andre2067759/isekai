@@ -18,13 +18,22 @@
 | Vitalità (`vitality`) | +2 punti salute massima | 50 |
 | Agilità (`agility`) | +0,0015 velocità di movimento | 50 |
 | Intelligenza (`intelligence`) | Riservata al sistema magico | 50 |
-| Spirito (`spirit`) | Riservata a mana, energia e tecniche spirituali | 50 |
+| Spirito (`spirit`) | +10 mana massimo e +0,1 mana/secondo | 50 |
 
 I modificatori degli attributi vanilla vengono rimossi e riapplicati usando UUID stabili, evitando duplicazioni quando il giocatore rientra o rinasce.
 
+## Mana e risorse magiche
+
+- Mana iniziale: 100.
+- Intelligenza aumenta la riserva massima di 5 punti per punto statistica.
+- Spirito aumenta la riserva massima di 10 punti e la rigenerazione di 0,1 mana al secondo per punto.
+- Rigenerazione base: 1 mana al secondo.
+- La riserva e il valore corrente sono persistenti e vengono mantenuti entro il massimo consentito.
+
 ## Comandi
 
-- `/isekai status`: mostra livello, esperienza, punti disponibili e tutte le statistiche.
+- `/isekai status`: mostra livello, esperienza, punti disponibili, statistiche e mana.
+- `/isekai mana`: mostra la riserva di mana corrente e massima.
 - `/isekai allocate <stat> <punti>`: spende punti in una statistica.
 - Valori ammessi per `<stat>`: `strength`, `vitality`, `agility`, `intelligence`, `spirit`.
 - Il comando rifiuta statistiche oltre il limite o spese superiori ai punti disponibili.
