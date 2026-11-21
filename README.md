@@ -71,3 +71,18 @@ The spell command now also includes:
 - Aether Stalker: fast hunter with lower durability (26 HP, 6 damage, 0.36 movement speed), 12 XP and shard/dust drops.
 - Aether Brute: rare elite with high durability (92 HP, 14 damage, 12 armor), 45 XP and improved shard/crystal drops with a rare Voidsteel ingot.
 - All three variants can spawn naturally in Overworld biomes. For controlled testing use `/summon isekai:aether_stalker` and `/summon isekai:aether_brute`.
+
+
+## New enemy test tranche
+
+Three additional Aether enemies are registered with dedicated attributes and experience rewards:
+- Wraith (38 HP, 9 damage, 55 XP): fast and aggressive.
+- Ravager (68 HP, 11 damage, 9 armor, 90 XP): armoured mid-tier fighter.
+- Warden (260 HP, 18 damage, 16 armor, 350 XP): boss-scale endurance challenge.
+
+Test directly with:
+- `/summon isekai:aether_wraith`
+- `/summon isekai:aether_ravager`
+- `/summon isekai:aether_warden`
+
+Creative inventory also contains their spawn eggs. Defeating them grants progression XP and contributes to the existing Aether hunt milestones.
