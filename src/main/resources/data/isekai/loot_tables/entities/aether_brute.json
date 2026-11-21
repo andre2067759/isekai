@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [{ "type": "minecraft:item", "name": "isekai:aether_shard" }],
+      "functions": [{ "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 4.0, "max": 8.0 } }]
+    },
+    {
+      "rolls": 1,
+      "entries": [{ "type": "minecraft:item", "name": "isekai:aether_crystal" }],
+      "conditions": [{ "condition": "minecraft:random_chance", "chance": 0.35 }]
+    },
+    {
+      "rolls": 1,
+      "entries": [{ "type": "minecraft:item", "name": "isekai:voidsteel_ingot" }],
+      "conditions": [{ "condition": "minecraft:random_chance", "chance": 0.12 }]
+    }
+  ]
+}
