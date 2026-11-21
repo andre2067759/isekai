@@ -64,5 +64,11 @@
   "item.isekai.void_amulet": "Amuleto del Vuoto",
   "item.isekai.sun_ring": "Anello Solare",
   "item.isekai.moon_talisman": "Talismano Lunare",
-  "item.isekai.greater_aether_fruit": "Frutto Superiore di Aether"
+  "item.isekai.greater_aether_fruit": "Frutto Superiore di Aether",
+  "entity.isekai.aether_wraith": "Spettro dell'Aether",
+  "entity.isekai.aether_ravager": "Carnefice dell'Aether",
+  "entity.isekai.aether_warden": "Custode dell'Aether",
+  "item.isekai.aether_wraith_spawn_egg": "Uovo generatore: Spettro dell'Aether",
+  "item.isekai.aether_ravager_spawn_egg": "Uovo generatore: Carnefice dell'Aether",
+  "item.isekai.aether_warden_spawn_egg": "Uovo generatore: Custode dell'Aether"
 }
