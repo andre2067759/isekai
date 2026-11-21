@@ -17,6 +17,8 @@ public class ModEntityEvents {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.AETHER_SENTINEL.get(), AetherSentinel.createAttributes().build());
+        event.put(ModEntities.AETHER_STALKER.get(), com.isekai.entity.AetherStalker.createAttributes().build());
+        event.put(ModEntities.AETHER_BRUTE.get(), com.isekai.entity.AetherBrute.createAttributes().build());
     }
 
     @Mod.EventBusSubscriber(modid = IsekaiMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -28,7 +30,11 @@ public class ModEntityEvents {
 
         @SubscribeEvent
         public static void clientSetup(FMLClientSetupEvent event) {
-            event.enqueueWork(() -> EntityRenderers.register(ModEntities.AETHER_SENTINEL.get(), AetherSentinelRenderer::new));
+            event.enqueueWork(() -> {
+                EntityRenderers.register(ModEntities.AETHER_SENTINEL.get(), AetherSentinelRenderer::new);
+                EntityRenderers.register(ModEntities.AETHER_STALKER.get(), AetherSentinelRenderer::new);
+                EntityRenderers.register(ModEntities.AETHER_BRUTE.get(), AetherSentinelRenderer::new);
+            });
         }
     }
 }
