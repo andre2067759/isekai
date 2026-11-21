@@ -48,3 +48,10 @@ Le statistiche Intelligenza e Spirito sono già salvate e pronte per essere coll
 - The art direction uses distinct Aether, Sun and Moon palettes, dark metal silhouettes, bright rune seams and crystalline highlights. These are the first coherent replacement pass; individual assets will continue to receive more detailed custom models and animation.
 - `/isekai shop` lists the Aether merchant's offers. Use `/isekai shop buy <item>` to purchase with persistent coins.
 - `/isekai quest` now tracks three Sentinel hunt milestones at 3, 8 and 15 kills, each with its own coin and experience reward.
+
+
+## Expanded relic and material tranche
+
+The build pipeline now produces a second, more detailed pixel-art pass at 32×32 for item and block icons, with distinct Aether, Moon, Sun, Void, Ember and Starlight palettes. It also generates the model JSON and crafting recipes for 15 additional items during the build, so the source remains reproducible from `tools/generate_textures.py`.
+
+New items: Voidsteel, Embersteel and Starlight ingots; three matching crystals; Void Sword, Sun Greatblade, Moon Dagger, Aether Spear and Aether Staff; Void Amulet, Sun Ring, Moon Talisman; Greater Aether Fruit. The new weapons and materials are also purchasable from `/isekai shop`.
