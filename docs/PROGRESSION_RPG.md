@@ -1,37 +1,38 @@
-# ISEKAI — Progressione RPG (specifica tecnica)
+# ISEKAI — Progressione RPG e statistiche
 
-## Versione iniziale del sistema
+## Progressione
 
-La progressione è server-authoritative e usa i dati persistenti del giocatore Minecraft. In questo modo il livello non dipende dal client e non richiede una libreria esterna.
+- Livello iniziale: 1.
+- Livello massimo attuale: 100.
+- Esperienza persistente nei dati del giocatore.
+- Ricompensa iniziale: 45 PE per sconfiggere una Sentinella dell'Aether.
+- Formula: PE richiesti = 100 + (livello - 1) × 50.
+- Ogni livello ottenuto assegna 1 punto statistica.
+- I punti e le statistiche sono salvati nel tag persistente `isekai_progression`.
 
-| Campo | Valore iniziale |
-|---|---|
-| Chiave NBT radice | `isekai_progression` |
-| Livello iniziale | 1 |
-| Livello massimo della prima implementazione | 100 |
-| Esperienza iniziale | 0 |
-| Ricompensa Sentinella dell'Aether | 45 PE |
-| PE richiesti dal livello 1 al 2 | 100 |
-| Incremento del costo per livello | +50 PE |
+## Statistiche primarie
 
-Formula iniziale:
+| Statistica | Effetto attuale per punto | Limite |
+|---|---|---:|
+| Forza (`strength`) | +0,5 danni d'attacco | 50 |
+| Vitalità (`vitality`) | +2 punti salute massima | 50 |
+| Agilità (`agility`) | +0,0015 velocità di movimento | 50 |
+| Intelligenza (`intelligence`) | Riservata al sistema magico | 50 |
+| Spirito (`spirit`) | Riservata a mana, energia e tecniche spirituali | 50 |
 
-`PE richiesti = 100 + (livello - 1) × 50`
+I modificatori degli attributi vanilla vengono rimossi e riapplicati usando UUID stabili, evitando duplicazioni quando il giocatore rientra o rinasce.
 
-L'esperienza eccedente viene conservata quando si supera più di un livello con una singola ricompensa. Al livello massimo l'esperienza residua viene azzerata.
+## Comandi
 
-## Eventi
+- `/isekai status`: mostra livello, esperienza, punti disponibili e tutte le statistiche.
+- `/isekai allocate <stat> <punti>`: spende punti in una statistica.
+- Valori ammessi per `<stat>`: `strength`, `vitality`, `agility`, `intelligence`, `spirit`.
+- Il comando rifiuta statistiche oltre il limite o spese superiori ai punti disponibili.
 
-- `LivingDeathEvent`: assegna esperienza al giocatore che ha ucciso una Sentinella dell'Aether.
-- `PlayerEvent.Clone`: copia i dati di progressione quando il giocatore viene ricreato.
-- `RegisterCommandsEvent`: registra `/isekai status`.
+## Ricompense attuali
 
-## Evoluzione prevista
+La Sentinella dell'Aether assegna 45 PE al giocatore che infligge il colpo finale. La ricompensa è una prima integrazione dimostrativa; il catalogo completo delle creature definirà in seguito valori e regole di ricompensa per ogni famiglia.
 
-1. Estendere le ricompense a tutte le famiglie di creature, con valori definiti nel catalogo.
-2. Introdurre statistiche primarie e secondarie con salvataggio persistente.
-3. Collegare livelli, classi, razze, abilità e requisiti dell'equipaggiamento.
-4. Aggiungere interfaccia dedicata e schermate di progressione.
-5. Aggiungere configurazione server per curva PE e ricompense.
+## Compatibilità e migrazione
 
-Le fasi successive dovranno mantenere la compatibilità con i dati già salvati: le chiavi NBT esistenti non vanno rinominate senza una migrazione.
+I nuovi campi vengono inizializzati a zero quando un vecchio salvataggio non li contiene. Le chiavi `level` ed `experience` già introdotte restano invariate. Nessuna dipendenza obbligatoria da mod esterne.
