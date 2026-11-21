@@ -6,28 +6,36 @@ Mod fantasy-RPG per Minecraft Java 1.20.1 / Forge 47.4.28.
 
 Il branch `isekai-full-rework` ospita la ricostruzione progressiva dei sistemi di gioco. Il branch `main` resta la base stabile.
 
-### Sistemi già presenti nella base
+### Contenuti della base
 
 - Materiali e minerali Aether, blocchi e strumenti.
 - Equipaggiamento Aether, Solare e Lunare.
 - Sentinella dell'Aether con modello, renderer e spawn naturale.
 - Ricette, loot table e advancement dedicati.
 
-### Prima fase RPG: progressione del personaggio
+### Sistemi RPG implementati nel branch di sviluppo
 
-- Livello iniziale: 1.
-- Livello massimo attuale: 100.
-- Esperienza persistente nei dati del giocatore.
-- Ricompensa iniziale: 45 PE per sconfiggere una Sentinella dell'Aether.
-- Curva iniziale: 100 PE per passare dal livello 1 al 2, con incremento di 50 PE per ogni livello successivo.
-- Comando `/isekai status` per consultare livello ed esperienza.
-- Dati copiati quando Minecraft ricrea l'entità giocatore.
+- Progressione persistente dal livello 1 al 100.
+- Esperienza per l'uccisione della Sentinella dell'Aether.
+- Un punto statistica per ogni livello guadagnato.
+- Forza, Vitalità, Agilità, Intelligenza e Spirito.
+- Riserva di mana persistente, capacità aumentata da Intelligenza e rigenerazione migliorata da Spirito.
+- Primo incantesimo utilizzabile: Dardo di Aether, con costo mana, danno magico, portata e ricarica.
+- Identità del personaggio: scelta persistente di razza e classe, con tratti passivi applicati realmente al personaggio.
+- Tratti razziali: Umano (+1 fortuna), Elfo (+velocità), Nano (+2 armatura), Demone (+1 danno).
+- Tratti di classe: Guerriero (+1,5 danno e +4 salute), Mago (+velocità), Arciere (+velocità e velocità d'attacco).
+- Tre abilità attive vincolate alla classe: Fendente del Guerriero, Impulso Arcano del Mago e Raffica dell'Arciere, con mana, bersagli e ricarica.
+- Missione iniziale con obiettivo automatico, ricompensa in PE e valuta persistente.
+- Portafoglio con monete e prima abilità ad area, Esplosione di Aether.
+- Modificatori reali a danno, salute massima e velocità.
+- Comandi `/isekai status`, `/isekai mana`, `/isekai allocate <stat> <punti>`, `/isekai cast aether_bolt`, `/isekai profile`, `/isekai quest`, `/isekai wallet` e `/isekai skill`, più `/isekai skill use warrior_cleave`, `/isekai skill use arcane_pulse` e `/isekai skill use ranger_volley`.
+- Conservazione dei dati al login e alla rinascita del personaggio.
 
-Questa è la prima infrastruttura del sistema RPG: abilità, attributi, classi, razze, UI e ricompense aggiuntive verranno costruiti sopra questa base, senza introdurre dipendenze obbligatorie da altre mod.
+Le statistiche Intelligenza e Spirito sono già salvate e pronte per essere collegate ai futuri sistemi di mana, magia e coltivazione spirituale.
 
 ## Ambiente di compilazione
 
 - Java 17
 - Minecraft 1.20.1
 - Forge 47.4.28
-- Gradle Wrapper del progetto
+- Gradle 8.8
