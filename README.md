@@ -39,3 +39,12 @@ Le statistiche Intelligenza e Spirito sono già salvate e pronte per essere coll
 - Minecraft 1.20.1
 - Forge 47.4.28
 - Gradle 8.8
+
+
+## Texture pipeline and new character content
+
+- `tools/generate_textures.py` creates the original ISEKAI pixel-art PNG assets using only Python's standard library. It regenerates the block, item, armor-layer and Aether Sentinel textures before the GitHub Actions Forge build.
+- For a local build, run `python tools/generate_textures.py` from the repository root before `gradle build`.
+- The art direction uses distinct Aether, Sun and Moon palettes, dark metal silhouettes, bright rune seams and crystalline highlights. These are the first coherent replacement pass; individual assets will continue to receive more detailed custom models and animation.
+- `/isekai shop` lists the Aether merchant's offers. Use `/isekai shop buy <item>` to purchase with persistent coins.
+- `/isekai quest` now tracks three Sentinel hunt milestones at 3, 8 and 15 kills, each with its own coin and experience reward.
