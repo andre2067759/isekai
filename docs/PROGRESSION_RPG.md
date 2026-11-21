@@ -63,3 +63,44 @@ I nuovi campi vengono inizializzati a zero quando un vecchio salvataggio non li 
 Comando provvisorio: `/isekai cast aether_bolt`.
 
 L'incantesimo consuma mana solo quando colpisce e danneggia un bersaglio. La ricarica viene salvata nei dati persistenti del giocatore. L'attivazione tramite comando è temporanea: il sistema sarà successivamente collegato a selezione incantesimi, tasti rapidi e interfaccia dedicata.
+
+
+## Prima fetta dei sistemi di gioco
+
+Questa fase adotta uno sviluppo orizzontale: ogni grande area riceve una piccola funzione verificabile prima dell'espansione completa.
+
+### Identità: razze e classi
+
+Comandi:
+- `/isekai profile`: visualizza il profilo.
+- `/isekai race choose <razza>`: sceglie una razza tra `human`, `elf`, `dwarf`, `demonkin`.
+- `/isekai class choose <classe>`: sceglie una classe tra `warrior`, `mage`, `ranger`.
+
+La prima scelta è persistente e non modificabile tramite questi comandi. In questa build razza e classe sono identità registrate, non hanno ancora alberi evolutivi o bonus completi. La scelta definitiva di bilanciamento sarà fatta dopo la prova in gioco.
+
+### Missione e ricompense
+
+Missione iniziale: **Caccia alle Sentinelle**.
+- Obiettivo: sconfiggere 3 Sentinelle dell'Aether.
+- Ricompensa: 75 monete e 150 PE.
+- Avanzamento automatico alla morte della Sentinella.
+- Comando `/isekai quest` per vedere l'obiettivo.
+- Comando `/isekai wallet` per controllare le monete.
+- Completamento e ricompensa sono salvati nei dati persistenti.
+
+### Abilità attiva
+
+**Esplosione di Aether**:
+- Comando: `/isekai skill use aether_burst`.
+- Costo: 20 mana.
+- Danno: 6 danni magici per bersaglio.
+- Area: raggio di 4 blocchi intorno al giocatore.
+- Ricarica: 8 secondi.
+- Colpisce le creature viventi non alleate presenti nell'area.
+- `/isekai skill list` mostra le abilità disponibili.
+
+È un prototipo di abilità ad area: animazioni dedicate, progressione dei gradi, requisiti di classe e bilanciamento avanzato sono ancora da realizzare.
+
+### Economia iniziale
+
+La valuta persistente è la moneta ISEKAI. Al momento viene assegnata dalla missione iniziale; negozi, mercanti NPC, prezzi e commercio saranno collegati in una fase successiva.
