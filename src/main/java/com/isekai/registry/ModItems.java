@@ -85,11 +85,11 @@ public class ModItems {
             .nutrition(10).saturationMod(1.0F).alwaysEat().build())));
 
     public static final RegistryObject<Item> AETHER_WRAITH_SPAWN_EGG = ITEMS.register("aether_wraith_spawn_egg",
-        () -> new SpawnEggItem(ModEntities.AETHER_WRAITH, 0x17152B, 0x8B5CF6, new Item.Properties()));
+        () -> new SpawnEggItem(ModEntities.AETHER_WRAITH.get(), 0x17152B, 0x8B5CF6, new Item.Properties()));
     public static final RegistryObject<Item> AETHER_RAVAGER_SPAWN_EGG = ITEMS.register("aether_ravager_spawn_egg",
-        () -> new SpawnEggItem(ModEntities.AETHER_RAVAGER, 0x252A35, 0xD97736, new Item.Properties()));
+        () -> new SpawnEggItem(ModEntities.AETHER_RAVAGER.get(), 0x252A35, 0xD97736, new Item.Properties()));
     public static final RegistryObject<Item> AETHER_WARDEN_SPAWN_EGG = ITEMS.register("aether_warden_spawn_egg",
-        () -> new SpawnEggItem(ModEntities.AETHER_WARDEN, 0x101A2B, 0x38BDF8, new Item.Properties()));
+        () -> new SpawnEggItem(ModEntities.AETHER_WARDEN.get(), 0x101A2B, 0x38BDF8, new Item.Properties()));
 
     public static final RegistryObject<Item> AETHER_BLOCK_ITEM = blockItem("aether_block", ModBlocks.AETHER_BLOCK);
     public static final RegistryObject<Item> RAW_AETHER_BLOCK_ITEM = blockItem("raw_aether_block", ModBlocks.RAW_AETHER_BLOCK);
