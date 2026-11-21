@@ -45,3 +45,21 @@ La Sentinella dell'Aether assegna 45 PE al giocatore che infligge il colpo final
 ## Compatibilità e migrazione
 
 I nuovi campi vengono inizializzati a zero quando un vecchio salvataggio non li contiene. Le chiavi `level` ed `experience` già introdotte restano invariate. Nessuna dipendenza obbligatoria da mod esterne.
+
+
+## Primo incantesimo: Dardo di Aether
+
+| Proprietà | Valore |
+|---|---|
+| ID | `isekai:aether_bolt` |
+| Scuola | Aether |
+| Costo | 25 mana |
+| Danno base | 12 danni magici |
+| Portata | 18 blocchi |
+| Ricarica | 40 tick (2 secondi) |
+| Bersaglio | Prima creatura vivente intercettata lungo la linea di mira |
+| Ostacoli | Il tracciamento si arresta al primo blocco solido |
+
+Comando provvisorio: `/isekai cast aether_bolt`.
+
+L'incantesimo consuma mana solo quando colpisce e danneggia un bersaglio. La ricarica viene salvata nei dati persistenti del giocatore. L'attivazione tramite comando è temporanea: il sistema sarà successivamente collegato a selezione incantesimi, tasti rapidi e interfaccia dedicata.
