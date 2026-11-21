@@ -15,8 +15,9 @@ public class IsekaiMod {
     public IsekaiMod() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         ModBlocks.register(bus);
+        // Entity types must be registered before spawn-egg items resolve their EntityType.
+        ModEntities.register(bus);
         ModItems.register(bus);
         ModWorldGen.register(bus);
-        ModEntities.register(bus);
     }
 }
