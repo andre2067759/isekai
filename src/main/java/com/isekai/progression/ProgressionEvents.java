@@ -299,7 +299,9 @@ public final class ProgressionEvents {
 
     private static double maxMana(CompoundTag progress) {
         return BASE_MANA + progress.getInt(INTELLIGENCE_KEY) * 5.0D + progress.getInt(SPIRIT_KEY) * 10.0D;
-    }\n\n    private static int experienceRequired(int level) {
+    }
+
+    private static int experienceRequired(int level) {
         return 100 + Math.max(0, level - 1) * 50;
     }
 }
