@@ -108,6 +108,33 @@ def armor_icon(name):
   poly(d,[(19,12),(26,12),(26,39),(45,46),(47,51),(14,51),(14,48),(22,40)],p[2])
   line(d,[(18,43),(44,49)],p[5],2);gem(d,28,27,4,p)
  return im
+def staff_art(name):
+ p=pal(name); im,d=canvas()
+ # ornate mage's sceptre: carved darkwood shaft, silver collars and a floating prism
+ line(d,[(31,20),(31,60)],p[0],8);line(d,[(31,22),(31,57)],p[2],4)
+ line(d,[(29,28),(33,28)],p[5],2);line(d,[(29,46),(33,46)],p[6],2)
+ poly(d,[(31,2),(39,10),(37,19),(31,24),(25,19),(23,10)],p[0])
+ poly(d,[(31,5),(36,11),(34,17),(31,20),(28,17),(26,11)],p[3])
+ gem(d,31,12,7,p)
+ line(d,[(22,8),(17,4)],p[5],1);line(d,[(40,8),(45,4)],p[5],1)
+ poly(d,[(26,56),(31,61),(36,56),(34,63),(28,63)],p[6])
+ return im
+def block_art(name):
+ p=pal(name); im,d=canvas()
+ # seamless mineral/stone tile with restrained noise and a readable ore cluster
+ rect(d,(0,0,63,63),p[0])
+ for y in range(2,62,4):
+  for x in range(2,62,4):
+   v=((x*13+y*17+x*y)%11)
+   if v<3: rect(d,(x,y,x+1,y+1),p[1])
+   elif v<6: rect(d,(x,y,x+1,y+1),p[2])
+ poly(d,[(7,15),(20,7),(34,12),(29,25),(15,29)],p[1])
+ poly(d,[(37,35),(50,28),(58,40),(51,55),(38,51)],p[1])
+ for x,y in [(15,17),(22,42),(45,42),(51,47)]:
+  poly(d,[(x,y-6),(x+5,y-2),(x+4,y+4),(x,y+6),(x-4,y+2)],p[3])
+  poly(d,[(x,y-4),(x+3,y-1),(x,y+2),(x-2,y)],p[5])
+ line(d,[(3,3),(60,3)],p[2],1);line(d,[(3,60),(60,60)],p[0],1)
+ return im
 def tool_art(name):
  p=pal(name); im,d=canvas()
  if "pickaxe" in name:
@@ -161,7 +188,7 @@ def food_art(name):
  d.ellipse((20,24,26,31),fill=rgba(p[5]));d.ellipse((38,33,43,39),fill=rgba(p[4]))
  return im
 def generic_item(name):
- if any(x in name for x in ("sword","greatblade","dagger","spear","staff")): return sword_art(name)
+ if "staff" in name: return staff_art(name)\n if any(x in name for x in ("sword","greatblade","dagger","spear")): return sword_art(name)
  if "bow" in name: return bow_art(name)
  if any(x in name for x in ("helmet","chestplate","leggings","boots")): return armor_icon(name)
  if any(x in name for x in ("pickaxe","axe","shovel","hoe")): return tool_art(name)
