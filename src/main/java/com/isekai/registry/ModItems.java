@@ -61,6 +61,29 @@ public class ModItems {
         () -> new Item(new Item.Properties().food(new net.minecraft.world.food.FoodProperties.Builder()
             .nutrition(6).saturationMod(0.8F).alwaysEat().build())));
 
+    // Expanded materials, relic weapons and collectible accessories.
+    public static final RegistryObject<Item> VOIDSTEEL_INGOT = reg("voidsteel_ingot");
+    public static final RegistryObject<Item> EMBERSTEEL_INGOT = reg("embersteel_ingot");
+    public static final RegistryObject<Item> STARLIGHT_INGOT = reg("starlight_ingot");
+    public static final RegistryObject<Item> VOID_CRYSTAL = reg("void_crystal");
+    public static final RegistryObject<Item> EMBER_CRYSTAL = reg("ember_crystal");
+    public static final RegistryObject<Item> STARLIGHT_CRYSTAL = reg("starlight_crystal");
+    public static final RegistryObject<Item> VOID_SWORD = ITEMS.register("void_sword",
+        () -> new SwordItem(AetherTier.MOON, 6, -2.5F, new Item.Properties()));
+    public static final RegistryObject<Item> SUN_GREATBLADE = ITEMS.register("sun_greatblade",
+        () -> new SwordItem(AetherTier.SUN, 8, -3.2F, new Item.Properties()));
+    public static final RegistryObject<Item> MOON_DAGGER = ITEMS.register("moon_dagger",
+        () -> new SwordItem(AetherTier.MOON, 2, -1.6F, new Item.Properties()));
+    public static final RegistryObject<Item> AETHER_SPEAR = ITEMS.register("aether_spear",
+        () -> new SwordItem(AetherTier.AETHER, 4, -2.8F, new Item.Properties()));
+    public static final RegistryObject<Item> AETHER_STAFF = reg("aether_staff");
+    public static final RegistryObject<Item> VOID_AMULET = reg("void_amulet");
+    public static final RegistryObject<Item> SUN_RING = reg("sun_ring");
+    public static final RegistryObject<Item> MOON_TALISMAN = reg("moon_talisman");
+    public static final RegistryObject<Item> GREATER_AETHER_FRUIT = ITEMS.register("greater_aether_fruit",
+        () -> new Item(new Item.Properties().food(new net.minecraft.world.food.FoodProperties.Builder()
+            .nutrition(10).saturationMod(1.0F).alwaysEat().build())));
+
     public static final RegistryObject<Item> AETHER_BLOCK_ITEM = blockItem("aether_block", ModBlocks.AETHER_BLOCK);
     public static final RegistryObject<Item> RAW_AETHER_BLOCK_ITEM = blockItem("raw_aether_block", ModBlocks.RAW_AETHER_BLOCK);
     public static final RegistryObject<Item> SUN_AETHER_BLOCK_ITEM = blockItem("sun_aether_block", ModBlocks.SUN_AETHER_BLOCK);
