@@ -20,8 +20,9 @@ Il branch `isekai-full-rework` ospita la ricostruzione progressiva dei sistemi d
 - Un punto statistica per ogni livello guadagnato.
 - Forza, Vitalità, Agilità, Intelligenza e Spirito.
 - Riserva di mana persistente, capacità aumentata da Intelligenza e rigenerazione migliorata da Spirito.
+- Primo incantesimo utilizzabile: Dardo di Aether, con costo mana, danno magico, portata e ricarica.
 - Modificatori reali a danno, salute massima e velocità.
-- Comandi `/isekai status`, `/isekai mana` e `/isekai allocate <stat> <punti>`.
+- Comandi `/isekai status`, `/isekai mana`, `/isekai allocate <stat> <punti>` e `/isekai cast aether_bolt`.
 - Conservazione dei dati al login e alla rinascita del personaggio.
 
 Le statistiche Intelligenza e Spirito sono già salvate e pronte per essere collegate ai futuri sistemi di mana, magia e coltivazione spirituale.
