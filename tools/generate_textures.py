@@ -277,7 +277,7 @@ def main():
   elif "textures/entity" in path.as_posix():
    image=entity_art(n)
   elif "/block/" in path.as_posix():
-   image=generic_item(n)
+   image=block_art(n)
   else:
    image=generic_item(n)
   save(image,path)
