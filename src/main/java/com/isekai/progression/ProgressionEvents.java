@@ -1,6 +1,8 @@
 package com.isekai.progression;
 
 import com.isekai.entity.AetherSentinel;
+import com.isekai.entity.AetherStalker;
+import com.isekai.entity.AetherBrute;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.SharedSuggestionProvider;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
@@ -57,7 +59,11 @@ public final class ProgressionEvents {
             return;
         }
 
-        if (event.getEntity() instanceof AetherSentinel) {
+        if (event.getEntity() instanceof AetherBrute) {
+            awardExperience(player, 120);
+        } else if (event.getEntity() instanceof AetherStalker) {
+            awardExperience(player, 28);
+        } else if (event.getEntity() instanceof AetherSentinel) {
             awardExperience(player, 45);
         }
     }
