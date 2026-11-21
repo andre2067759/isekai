@@ -45,6 +45,8 @@
   "advancements.isekai.aether_guardian.title": "Guardiano dell'Aether",
   "advancements.isekai.aether_guardian.description": "Forgia una corazza di Aether.",
   "entity.isekai.aether_sentinel": "Sentinella dell'Aether",
+  "entity.isekai.aether_stalker": "Predatore dell'Aether",
+  "entity.isekai.aether_brute": "Colosso dell'Aether",
   "advancements.isekai.sentinel_hunter.title": "Cacciatore di Sentinelle",
   "advancements.isekai.sentinel_hunter.description": "Sconfiggi una Sentinella dell'Aether.",
   "item.isekai.aether_sentinel_spawn_egg": "Uovo generatore: Sentinella dell'Aether",
