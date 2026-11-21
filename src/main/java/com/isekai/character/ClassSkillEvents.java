@@ -74,7 +74,7 @@ public final class ClassSkillEvents {
                     bestDistance = distance;
                 }
             }
-            if (best != null && best.hurt(player.damageSources().arrow(player, player), damage)) hits++;
+            if (best != null && best.hurt(player.damageSources().playerAttack(player), damage)) hits++;
             if (hits > 0) best.knockback(0.45D, player.getX() - best.getX(), player.getZ() - best.getZ());
         } else {
             double radius = skill.equals("warrior_cleave") ? 3.5D : 5.0D;
