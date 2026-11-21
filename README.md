@@ -55,3 +55,11 @@ Le statistiche Intelligenza e Spirito sono già salvate e pronte per essere coll
 The build pipeline now produces a second, more detailed pixel-art pass at 32×32 for item and block icons, with distinct Aether, Moon, Sun, Void, Ember and Starlight palettes. It also generates the model JSON and crafting recipes for 15 additional items during the build, so the source remains reproducible from `tools/generate_textures.py`.
 
 New items: Voidsteel, Embersteel and Starlight ingots; three matching crystals; Void Sword, Sun Greatblade, Moon Dagger, Aether Spear and Aether Staff; Void Amulet, Sun Ring, Moon Talisman; Greater Aether Fruit. The new weapons and materials are also purchasable from `/isekai shop`.
+
+
+### Additional playable magic
+
+The spell command now also includes:
+- `/isekai cast void_lance`: a 24-block piercing magic strike, 22 damage, 35 mana, 5-second cooldown.
+- `/isekai cast solar_burst`: area fire-magic burst, 16 damage and brief ignition, 45 mana, 7-second cooldown.
+- `/isekai cast moon_step`: short collision-checked blink, 20 mana, 5-second cooldown.
