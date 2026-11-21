@@ -188,7 +188,8 @@ def food_art(name):
  d.ellipse((20,24,26,31),fill=rgba(p[5]));d.ellipse((38,33,43,39),fill=rgba(p[4]))
  return im
 def generic_item(name):
- if "staff" in name: return staff_art(name)\n if any(x in name for x in ("sword","greatblade","dagger","spear")): return sword_art(name)
+ if "staff" in name: return staff_art(name)
+ if any(x in name for x in ("sword","greatblade","dagger","spear")): return sword_art(name)
  if "bow" in name: return bow_art(name)
  if any(x in name for x in ("helmet","chestplate","leggings","boots")): return armor_icon(name)
  if any(x in name for x in ("pickaxe","axe","shovel","hoe")): return tool_art(name)
