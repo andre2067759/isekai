@@ -1,17 +1,33 @@
-# ISEKAI 1.3.0 — Forge 1.20.1
+# ISEKAI
 
-## Contenuti aggiunti in questa milestone
-- Prima creatura ostile personalizzata: Sentinella dell'Aether.
-- Modello 3D, texture dedicata, renderer client e comportamento di combattimento.
-- Generazione naturale nell'Overworld e uovo generatore per testarla.
-- Drop di frammenti e cristalli Aether.
-- Nuovo avanzamento per la sua sconfitta.
+Mod fantasy-RPG per Minecraft Java 1.20.1 / Forge 47.4.28.
 
-## Contenuti precedenti
-Minerali generati, materiali Aether/Solari/Lunari, strumenti, spade, tre set completi di armature, arco, consumabile, texture, ricette e avanzamenti.
+## Stato dello sviluppo
 
-## Compatibilità prevista
-Minecraft Java 1.20.1, Forge 47.4.28, Java 17. Gli oggetti e le ricette standard sono visualizzabili in JEI 15.x se installato. Il capitolo FTB Quests e i boss/dungeon non sono ancora inclusi.
+Il branch `isekai-full-rework` ospita la ricostruzione progressiva dei sistemi di gioco. Il branch `main` resta la base stabile.
 
-## Verifica
-Archivio sorgente aggiornato. Questa esecuzione non ha compilato il progetto: la compatibilità del codice Java e dei JSON deve essere confermata con Gradle 8.8 e Java 17.
+### Sistemi già presenti nella base
+
+- Materiali e minerali Aether, blocchi e strumenti.
+- Equipaggiamento Aether, Solare e Lunare.
+- Sentinella dell'Aether con modello, renderer e spawn naturale.
+- Ricette, loot table e advancement dedicati.
+
+### Prima fase RPG: progressione del personaggio
+
+- Livello iniziale: 1.
+- Livello massimo attuale: 100.
+- Esperienza persistente nei dati del giocatore.
+- Ricompensa iniziale: 45 PE per sconfiggere una Sentinella dell'Aether.
+- Curva iniziale: 100 PE per passare dal livello 1 al 2, con incremento di 50 PE per ogni livello successivo.
+- Comando `/isekai status` per consultare livello ed esperienza.
+- Dati copiati quando Minecraft ricrea l'entità giocatore.
+
+Questa è la prima infrastruttura del sistema RPG: abilità, attributi, classi, razze, UI e ricompense aggiuntive verranno costruiti sopra questa base, senza introdurre dipendenze obbligatorie da altre mod.
+
+## Ambiente di compilazione
+
+- Java 17
+- Minecraft 1.20.1
+- Forge 47.4.28
+- Gradle Wrapper del progetto
