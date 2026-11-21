@@ -60,7 +60,7 @@
   "item.isekai.sun_greatblade": "Grande Lama Solare",
   "item.isekai.moon_dagger": "Pugnale Lunare",
   "item.isekai.aether_spear": "Lancia di Aether",
-  "item.isekai.aether_staff": "Bastone Arcano di Aether",
+  "item.isekai.aether_staff": "Bastone dell'Aether",
   "item.isekai.void_amulet": "Amuleto del Vuoto",
   "item.isekai.sun_ring": "Anello Solare",
   "item.isekai.moon_talisman": "Talismano Lunare",
@@ -70,5 +70,7 @@
   "entity.isekai.aether_warden": "Custode dell'Aether",
   "item.isekai.aether_wraith_spawn_egg": "Uovo generatore: Spettro dell'Aether",
   "item.isekai.aether_ravager_spawn_egg": "Uovo generatore: Carnefice dell'Aether",
-  "item.isekai.aether_warden_spawn_egg": "Uovo generatore: Custode dell'Aether"
+  "item.isekai.aether_warden_spawn_egg": "Uovo generatore: Custode dell'Aether",
+  "item.isekai.aether_stalker_spawn_egg": "Uovo generatore: Predatore dell'Aether",
+  "item.isekai.aether_brute_spawn_egg": "Uovo generatore: Colosso dell'Aether"
 }
