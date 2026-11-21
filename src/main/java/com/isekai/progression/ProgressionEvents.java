@@ -59,7 +59,13 @@ public final class ProgressionEvents {
             return;
         }
 
-        if (event.getEntity() instanceof AetherBrute) {
+        if (event.getEntity() instanceof com.isekai.entity.AetherWarden) {
+            awardExperience(player, 350);
+        } else if (event.getEntity() instanceof com.isekai.entity.AetherRavager) {
+            awardExperience(player, 90);
+        } else if (event.getEntity() instanceof com.isekai.entity.AetherWraith) {
+            awardExperience(player, 55);
+        } else if (event.getEntity() instanceof AetherBrute) {
             awardExperience(player, 120);
         } else if (event.getEntity() instanceof AetherStalker) {
             awardExperience(player, 28);
