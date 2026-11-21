@@ -112,7 +112,7 @@ public final class ProgressionEvents {
             .then(Commands.literal("allocate")
                 .then(Commands.argument("stat", StringArgumentType.word())
                     .suggests((context, builder) -> SharedSuggestionProvider.suggest(
-                        new String[]{"strength", "vitality", "agility", "intelligence", "spirit"}, builder))
+                        java.util.List.of("strength", "vitality", "agility", "intelligence", "spirit"), builder))
                     .then(Commands.argument("points", IntegerArgumentType.integer(1, MAX_STAT))
                         .executes(context -> {
                             ServerPlayer player = context.getSource().getPlayerOrException();
