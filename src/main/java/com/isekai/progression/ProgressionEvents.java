@@ -225,6 +225,7 @@ public final class ProgressionEvents {
         progress.putInt(key, current + amount);
         progress.putInt(POINTS_KEY, available - amount);
         applyStatModifiers(player);
+        progress.putDouble(MANA_KEY, Math.min(progress.getDouble(MANA_KEY), maxMana(progress)));
 
         player.sendSystemMessage(Component.literal(
             "§b[ISEKAI] §f" + statName(stat) + " aumentata a " + (current + amount)
@@ -289,10 +290,16 @@ public final class ProgressionEvents {
         progress.putInt(AGILITY_KEY, Math.max(0, Math.min(MAX_STAT, progress.getInt(AGILITY_KEY))));
         progress.putInt(INTELLIGENCE_KEY, Math.max(0, Math.min(MAX_STAT, progress.getInt(INTELLIGENCE_KEY))));
         progress.putInt(SPIRIT_KEY, Math.max(0, Math.min(MAX_STAT, progress.getInt(SPIRIT_KEY))));
+        if (!progress.contains(MANA_KEY)) {
+            progress.putDouble(MANA_KEY, BASE_MANA);
+        }
+        progress.putDouble(MANA_KEY, Math.max(0.0D, Math.min(maxMana(progress), progress.getDouble(MANA_KEY))));
         return progress;
     }
 
-    private static double maxMana(CompoundTag progress) {\n        return BASE_MANA + progress.getInt(INTELLIGENCE_KEY) * 5.0D + progress.getInt(SPIRIT_KEY) * 10.0D;\n    }\n\n    private static int experienceRequired(int level) {
+    private static double maxMana(CompoundTag progress) {
+        return BASE_MANA + progress.getInt(INTELLIGENCE_KEY) * 5.0D + progress.getInt(SPIRIT_KEY) * 10.0D;
+    }\n\n    private static int experienceRequired(int level) {
         return 100 + Math.max(0, level - 1) * 50;
     }
 }
