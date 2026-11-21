@@ -86,3 +86,14 @@ Test directly with:
 - `/summon isekai:aether_warden`
 
 Creative inventory also contains their spawn eggs. Defeating them grants progression XP and contributes to the existing Aether hunt milestones.
+
+
+## In-game spellcasting and creature eggs
+
+The Aether Staff now provides command-free spell controls:
+- Hold the Aether Staff and right-click to cast the selected spell.
+- Sneak + right-click to cycle through Aether Bolt, Void Lance, Solar Burst and Moon Step.
+- The selected spell is saved in player persistent data; mana costs and cooldowns are still validated server-side.
+- The old slash commands remain available as an optional debug/alternative method.
+
+Spawn eggs are available in the ISEKAI creative tab for all six Aether creatures: Sentinel, Stalker, Brute, Wraith, Ravager and Warden.
