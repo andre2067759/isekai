@@ -32,6 +32,9 @@ jobs:
         with:
           gradle-version: '8.8'
 
+      - name: Install texture pipeline dependency
+        run: python3 -m pip install --disable-pip-version-check Pillow==11.1.0
+
       - name: Generate original ISEKAI textures
         run: python3 tools/generate_textures.py
 
