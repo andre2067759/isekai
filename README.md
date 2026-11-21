@@ -63,3 +63,11 @@ The spell command now also includes:
 - `/isekai cast void_lance`: a 24-block piercing magic strike, 22 damage, 35 mana, 5-second cooldown.
 - `/isekai cast solar_burst`: area fire-magic burst, 16 damage and brief ignition, 45 mana, 7-second cooldown.
 - `/isekai cast moon_step`: short collision-checked blink, 20 mana, 5-second cooldown.
+
+
+## Aether enemy ecosystem
+
+- Aether Sentinel: baseline melee guardian (42 HP, 8 damage).
+- Aether Stalker: fast hunter with lower durability (26 HP, 6 damage, 0.36 movement speed), 12 XP and shard/dust drops.
+- Aether Brute: rare elite with high durability (92 HP, 14 damage, 12 armor), 45 XP and improved shard/crystal drops with a rare Voidsteel ingot.
+- All three variants can spawn naturally in Overworld biomes. For controlled testing use `/summon isekai:aether_stalker` and `/summon isekai:aether_brute`.
