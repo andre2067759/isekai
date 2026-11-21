@@ -45,6 +45,8 @@
   "advancements.isekai.aether_guardian.title": "Aether Guardian",
   "advancements.isekai.aether_guardian.description": "Forge an Aether chestplate.",
   "entity.isekai.aether_sentinel": "Aether Sentinel",
+  "entity.isekai.aether_stalker": "Aether Stalker",
+  "entity.isekai.aether_brute": "Aether Brute",
   "advancements.isekai.sentinel_hunter.title": "Sentinel Hunter",
   "advancements.isekai.sentinel_hunter.description": "Defeat an Aether Sentinel.",
   "item.isekai.aether_sentinel_spawn_egg": "Aether Sentinel Spawn Egg"
