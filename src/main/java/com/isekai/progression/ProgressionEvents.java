@@ -15,6 +15,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -36,6 +37,8 @@ public final class ProgressionEvents {
     private static final String AGILITY_KEY = "agility";
     private static final String INTELLIGENCE_KEY = "intelligence";
     private static final String SPIRIT_KEY = "spirit";
+    private static final String MANA_KEY = "mana";
+    private static final double BASE_MANA = 100.0D;
 
     private static final int STARTING_LEVEL = 1;
     private static final int MAX_LEVEL = 100;
@@ -68,6 +71,24 @@ public final class ProgressionEvents {
     }
 
     @SubscribeEvent
+    public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+        if (event.phase != TickEvent.Phase.END || !(event.player instanceof ServerPlayer player)) {
+            return;
+        }
+        if (player.tickCount % 20 != 0) {
+            return;
+        }
+
+        CompoundTag progress = getProgress(player);
+        double maximum = maxMana(progress);
+        double current = Math.max(0.0D, Math.min(maximum, progress.getDouble(MANA_KEY)));
+        if (current < maximum) {
+            double regeneration = 1.0D + progress.getInt(SPIRIT_KEY) * 0.1D;
+            progress.putDouble(MANA_KEY, Math.min(maximum, current + regeneration));
+        }
+    }
+
+    @SubscribeEvent
     public static void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
         if (event.getEntity() instanceof ServerPlayer player) {
             applyStatModifiers(player);
@@ -92,6 +113,8 @@ public final class ProgressionEvents {
                     int experience = progress.getInt(EXPERIENCE_KEY);
                     int required = experienceRequired(level);
                     int points = progress.getInt(POINTS_KEY);
+                    double mana = progress.getDouble(MANA_KEY);
+                    double maxMana = maxMana(progress);
 
                     context.getSource().sendSuccess(() -> Component.literal(
                         "§bISEKAI §7| §fLivello " + level + " §8- §fEsperienza "
@@ -103,9 +126,20 @@ public final class ProgressionEvents {
                             + " §bAgilità: " + progress.getInt(AGILITY_KEY)
                     ), false);
                     context.getSource().sendSuccess(() -> Component.literal(
-                        "§dIntelligenza: " + progress.getInt(INTELLIGENCE_KEY)
+                        "§bMana: " + String.format(java.util.Locale.ROOT, "%.1f/%.1f", mana, maxMana)
+                            + " §8- §dIntelligenza: " + progress.getInt(INTELLIGENCE_KEY)
                             + " §5Spirito: " + progress.getInt(SPIRIT_KEY)
                             + " §7(Massimo per statistica: " + MAX_STAT + ")"
+                    ), false);
+                    return 1;
+                }))
+            .then(Commands.literal("mana")
+                .executes(context -> {
+                    ServerPlayer player = context.getSource().getPlayerOrException();
+                    CompoundTag progress = getProgress(player);
+                    context.getSource().sendSuccess(() -> Component.literal(
+                        "§bISEKAI Mana §7| §f"
+                            + String.format(java.util.Locale.ROOT, "%.1f / %.1f", progress.getDouble(MANA_KEY), maxMana(progress))
                     ), false);
                     return 1;
                 }))
@@ -258,7 +292,7 @@ public final class ProgressionEvents {
         return progress;
     }
 
-    private static int experienceRequired(int level) {
+    private static double maxMana(CompoundTag progress) {\n        return BASE_MANA + progress.getInt(INTELLIGENCE_KEY) * 5.0D + progress.getInt(SPIRIT_KEY) * 10.0D;\n    }\n\n    private static int experienceRequired(int level) {
         return 100 + Math.max(0, level - 1) * 50;
     }
 }
