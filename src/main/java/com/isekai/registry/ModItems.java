@@ -76,7 +76,7 @@ public class ModItems {
         () -> new SwordItem(AetherTier.MOON, 2, -1.6F, new Item.Properties()));
     public static final RegistryObject<Item> AETHER_SPEAR = ITEMS.register("aether_spear",
         () -> new SwordItem(AetherTier.AETHER, 4, -2.8F, new Item.Properties()));
-    public static final RegistryObject<Item> AETHER_STAFF = reg("aether_staff");
+    public static final RegistryObject<Item> AETHER_STAFF = ITEMS.register("aether_staff",\n        () -> new com.isekai.item.AetherStaffItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> VOID_AMULET = reg("void_amulet");
     public static final RegistryObject<Item> SUN_RING = reg("sun_ring");
     public static final RegistryObject<Item> MOON_TALISMAN = reg("moon_talisman");
@@ -84,6 +84,12 @@ public class ModItems {
         () -> new Item(new Item.Properties().food(new net.minecraft.world.food.FoodProperties.Builder()
             .nutrition(10).saturationMod(1.0F).alwaysEat().build())));
 
+    public static final RegistryObject<Item> AETHER_SENTINEL_SPAWN_EGG = ITEMS.register("aether_sentinel_spawn_egg",
+        () -> new SpawnEggItem(ModEntities.AETHER_SENTINEL.get(), 0x26364A, 0x48C8E8, new Item.Properties()));
+    public static final RegistryObject<Item> AETHER_STALKER_SPAWN_EGG = ITEMS.register("aether_stalker_spawn_egg",
+        () -> new SpawnEggItem(ModEntities.AETHER_STALKER.get(), 0x18202D, 0xA78BFA, new Item.Properties()));
+    public static final RegistryObject<Item> AETHER_BRUTE_SPAWN_EGG = ITEMS.register("aether_brute_spawn_egg",
+        () -> new SpawnEggItem(ModEntities.AETHER_BRUTE.get(), 0x37313D, 0xD6A84B, new Item.Properties()));
     public static final RegistryObject<Item> AETHER_WRAITH_SPAWN_EGG = ITEMS.register("aether_wraith_spawn_egg",
         () -> new SpawnEggItem(ModEntities.AETHER_WRAITH.get(), 0x17152B, 0x8B5CF6, new Item.Properties()));
     public static final RegistryObject<Item> AETHER_RAVAGER_SPAWN_EGG = ITEMS.register("aether_ravager_spawn_egg",
