@@ -136,6 +136,7 @@ public final class CharacterSystemsEvents {
         }
 
         data.putString(RACE, race);
+        CharacterTraits.apply(player);
         player.sendSystemMessage(Component.literal(
             "§d[ISEKAI] §fRazza scelta: " + displayRace(race) + "."
         ));
@@ -161,6 +162,7 @@ public final class CharacterSystemsEvents {
         }
 
         data.putString(CLASS, characterClass);
+        CharacterTraits.apply(player);
         player.sendSystemMessage(Component.literal(
             "§6[ISEKAI] §fClasse scelta: " + displayClass(characterClass) + "."
         ));
