@@ -47,6 +47,25 @@ public final class MagicEvents {
                     .executes(context -> castMoonStep(context.getSource().getPlayerOrException())))));
     }
 
+    private static final String SELECTED_SPELL_KEY = "isekai_selected_spell";
+
+    public static void cycleSelectedSpell(ServerPlayer player) {
+        int selected = (player.getPersistentData().getInt(SELECTED_SPELL_KEY) + 1) % 4;
+        player.getPersistentData().putInt(SELECTED_SPELL_KEY, selected);
+        String[] names = {"Dardo di Aether", "Lancia del Vuoto", "Esplosione Solare", "Passo Lunare"};
+        player.sendSystemMessage(Component.literal("§b[ISEKAI] §fIncantesimo selezionato: §d" + names[selected]
+            + " §7(" + (selected + 1) + "/4)"));
+    }
+
+    public static void castSelectedSpell(ServerPlayer player) {
+        switch (player.getPersistentData().getInt(SELECTED_SPELL_KEY)) {
+            case 1 -> castVoidLance(player);
+            case 2 -> castSolarBurst(player);
+            case 3 -> castMoonStep(player);
+            default -> castAetherBolt(player);
+        }
+    }
+
     private static int castAetherBolt(ServerPlayer player) {
         long now = player.level().getGameTime();
         long nextCast = player.getPersistentData().getLong(COOLDOWN_KEY);
