@@ -47,5 +47,20 @@
   "entity.isekai.aether_sentinel": "Sentinella dell'Aether",
   "advancements.isekai.sentinel_hunter.title": "Cacciatore di Sentinelle",
   "advancements.isekai.sentinel_hunter.description": "Sconfiggi una Sentinella dell'Aether.",
-  "item.isekai.aether_sentinel_spawn_egg": "Uovo generatore: Sentinella dell'Aether"
+  "item.isekai.aether_sentinel_spawn_egg": "Uovo generatore: Sentinella dell'Aether",
+  "item.isekai.voidsteel_ingot": "Lingotto di Acciaio del Vuoto",
+  "item.isekai.embersteel_ingot": "Lingotto di Acciaio Cremisi",
+  "item.isekai.starlight_ingot": "Lingotto di Metallo Stellare",
+  "item.isekai.void_crystal": "Cristallo del Vuoto",
+  "item.isekai.ember_crystal": "Cristallo Cremisi",
+  "item.isekai.starlight_crystal": "Cristallo Stellare",
+  "item.isekai.void_sword": "Lama del Vuoto",
+  "item.isekai.sun_greatblade": "Grande Lama Solare",
+  "item.isekai.moon_dagger": "Pugnale Lunare",
+  "item.isekai.aether_spear": "Lancia di Aether",
+  "item.isekai.aether_staff": "Bastone Arcano di Aether",
+  "item.isekai.void_amulet": "Amuleto del Vuoto",
+  "item.isekai.sun_ring": "Anello Solare",
+  "item.isekai.moon_talisman": "Talismano Lunare",
+  "item.isekai.greater_aether_fruit": "Frutto Superiore di Aether"
 }
