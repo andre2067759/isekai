@@ -19,8 +19,9 @@ Il branch `isekai-full-rework` ospita la ricostruzione progressiva dei sistemi d
 - Esperienza per l'uccisione della Sentinella dell'Aether.
 - Un punto statistica per ogni livello guadagnato.
 - Forza, Vitalità, Agilità, Intelligenza e Spirito.
+- Riserva di mana persistente, capacità aumentata da Intelligenza e rigenerazione migliorata da Spirito.
 - Modificatori reali a danno, salute massima e velocità.
-- Comandi `/isekai status` e `/isekai allocate <stat> <punti>`.
+- Comandi `/isekai status`, `/isekai mana` e `/isekai allocate <stat> <punti>`.
 - Conservazione dei dati al login e alla rinascita del personaggio.
 
 Le statistiche Intelligenza e Spirito sono già salvate e pronte per essere collegate ai futuri sistemi di mana, magia e coltivazione spirituale.
