@@ -76,7 +76,8 @@ public class ModItems {
         () -> new SwordItem(AetherTier.MOON, 2, -1.6F, new Item.Properties()));
     public static final RegistryObject<Item> AETHER_SPEAR = ITEMS.register("aether_spear",
         () -> new SwordItem(AetherTier.AETHER, 4, -2.8F, new Item.Properties()));
-    public static final RegistryObject<Item> AETHER_STAFF = ITEMS.register("aether_staff",\n        () -> new com.isekai.item.AetherStaffItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> AETHER_STAFF = ITEMS.register("aether_staff",
+        () -> new com.isekai.item.AetherStaffItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> VOID_AMULET = reg("void_amulet");
     public static final RegistryObject<Item> SUN_RING = reg("sun_ring");
     public static final RegistryObject<Item> MOON_TALISMAN = reg("moon_talisman");
