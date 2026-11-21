@@ -34,11 +34,19 @@ public final class CharacterSystemsEvents {
     private static final String COINS = "coins";
     private static final String SENTINEL_KILLS = "sentinel_kills";
     private static final String FIRST_HUNT_CLAIMED = "first_hunt_claimed";
+    private static final String SECOND_HUNT_CLAIMED = "second_hunt_claimed";
+    private static final String THIRD_HUNT_CLAIMED = "third_hunt_claimed";
     private static final String BURST_COOLDOWN = "aether_burst_cooldown";
 
     private static final int FIRST_HUNT_TARGET = 3;
     private static final int FIRST_HUNT_COINS = 75;
     private static final int FIRST_HUNT_XP = 150;
+    private static final int SECOND_HUNT_TARGET = 8;
+    private static final int SECOND_HUNT_COINS = 180;
+    private static final int SECOND_HUNT_XP = 300;
+    private static final int THIRD_HUNT_TARGET = 15;
+    private static final int THIRD_HUNT_COINS = 350;
+    private static final int THIRD_HUNT_XP = 650;
     private static final double BURST_MANA_COST = 20.0D;
     private static final float BURST_DAMAGE = 6.0F;
 
@@ -101,6 +109,25 @@ public final class CharacterSystemsEvents {
             player.sendSystemMessage(Component.literal(
                 "§b[ISEKAI] §fCaccia alle Sentinelle: " + kills + "/" + FIRST_HUNT_TARGET
             ));
+        }
+
+        if (!data.getBoolean(SECOND_HUNT_CLAIMED) && kills >= SECOND_HUNT_TARGET) {
+            data.putBoolean(SECOND_HUNT_CLAIMED, true);
+            data.putInt(COINS, data.getInt(COINS) + SECOND_HUNT_COINS);
+            player.sendSystemMessage(Component.literal(
+                "§6[ISEKAI] §eMissione completata: Sterminatore di Sentinelle! §f+"
+                    + SECOND_HUNT_COINS + " monete e +" + SECOND_HUNT_XP + " PE."
+            ));
+            ProgressionEvents.awardExperience(player, SECOND_HUNT_XP);
+        }
+        if (!data.getBoolean(THIRD_HUNT_CLAIMED) && kills >= THIRD_HUNT_TARGET) {
+            data.putBoolean(THIRD_HUNT_CLAIMED, true);
+            data.putInt(COINS, data.getInt(COINS) + THIRD_HUNT_COINS);
+            player.sendSystemMessage(Component.literal(
+                "§6[ISEKAI] §eMissione completata: Terrore dell'Aether! §f+"
+                    + THIRD_HUNT_COINS + " monete e +" + THIRD_HUNT_XP + " PE."
+            ));
+            ProgressionEvents.awardExperience(player, THIRD_HUNT_XP);
         }
     }
 
@@ -183,6 +210,12 @@ public final class CharacterSystemsEvents {
         player.sendSystemMessage(Component.literal(claimed
             ? "§aCompletata — ricompensa ricevuta."
             : "§7Ricompensa: §e" + FIRST_HUNT_COINS + " monete §7e §b" + FIRST_HUNT_XP + " PE."));
+        player.sendSystemMessage(Component.literal("§6MISSIONE II: Sterminatore — " 
+            + Math.min(SECOND_HUNT_TARGET, data.getInt(SENTINEL_KILLS)) + "/" + SECOND_HUNT_TARGET
+            + (data.getBoolean(SECOND_HUNT_CLAIMED) ? " §a[COMPLETATA]" : " §7— §e180 monete §7+ §b300 PE")));
+        player.sendSystemMessage(Component.literal("§cMISSIONE III: Terrore dell'Aether — "
+            + Math.min(THIRD_HUNT_TARGET, data.getInt(SENTINEL_KILLS)) + "/" + THIRD_HUNT_TARGET
+            + (data.getBoolean(THIRD_HUNT_CLAIMED) ? " §a[COMPLETATA]" : " §7— §e350 monete §7+ §b650 PE")));
         return Command.SINGLE_SUCCESS;
     }
 
