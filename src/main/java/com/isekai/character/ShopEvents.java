@@ -39,7 +39,7 @@ public final class ShopEvents {
                     .then(Commands.argument("item", StringArgumentType.word())
                         .suggests((context, builder) -> SharedSuggestionProvider.suggest(OFFERS, builder))
                         .executes(context -> buy(context.getSource().getPlayerOrException(),
-                            StringArgumentType.getString(context, "item"))))));
+                            StringArgumentType.getString(context, "item")))))));
     }
 
     private static int showShop(ServerPlayer player) {
