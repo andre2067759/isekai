@@ -24,8 +24,10 @@ public final class ShopEvents {
     private static final String COINS = "coins";
     private static final List<String> OFFERS = List.of(
         "aether_fruit", "aether_dust", "aether_shard", "aether_crystal",
-        "aether_ingot", "sun_aether_ingot", "moon_aether_ingot",
-        "aether_sword", "aether_bow"
+        "aether_ingot", "sun_aether_ingot", "moon_aether_ingot", "voidsteel_ingot", "embersteel_ingot",
+        "starlight_ingot", "void_crystal", "ember_crystal", "starlight_crystal",
+        "aether_sword", "aether_bow", "void_sword", "sun_greatblade", "moon_dagger", "aether_spear",
+        "aether_staff", "void_amulet", "sun_ring", "moon_talisman", "greater_aether_fruit"
     );
 
     private ShopEvents() {}
@@ -53,6 +55,8 @@ public final class ShopEvents {
         player.sendSystemMessage(Component.literal("§9Lingotto Lunare §7— 130 monete §8(moon_aether_ingot)"));
         player.sendSystemMessage(Component.literal("§bSpada Aether §7— 300 monete §8(aether_sword)"));
         player.sendSystemMessage(Component.literal("§dArco Aether §7— 250 monete §8(aether_bow)"));
+        player.sendSystemMessage(Component.literal("§5Nuove reliquie: §fvoid_sword, sun_greatblade, moon_dagger, aether_spear, aether_staff"));
+        player.sendSystemMessage(Component.literal("§dMateriali rari: §fvoidsteel_ingot, embersteel_ingot, starlight_ingot"));
         player.sendSystemMessage(Component.literal("§7Saldo: §e" + getData(player).getInt(COINS) + " monete"));
         return Command.SINGLE_SUCCESS;
     }
@@ -89,6 +93,21 @@ public final class ShopEvents {
             case "moon_aether_ingot" -> new Offer(ModItems.MOON_AETHER_INGOT.get(), 130);
             case "aether_sword" -> new Offer(ModItems.AETHER_SWORD.get(), 300);
             case "aether_bow" -> new Offer(ModItems.AETHER_BOW.get(), 250);
+            case "voidsteel_ingot" -> new Offer(ModItems.VOIDSTEEL_INGOT.get(), 180);
+            case "embersteel_ingot" -> new Offer(ModItems.EMBERSTEEL_INGOT.get(), 180);
+            case "starlight_ingot" -> new Offer(ModItems.STARLIGHT_INGOT.get(), 220);
+            case "void_crystal" -> new Offer(ModItems.VOID_CRYSTAL.get(), 160);
+            case "ember_crystal" -> new Offer(ModItems.EMBER_CRYSTAL.get(), 160);
+            case "starlight_crystal" -> new Offer(ModItems.STARLIGHT_CRYSTAL.get(), 200);
+            case "void_sword" -> new Offer(ModItems.VOID_SWORD.get(), 500);
+            case "sun_greatblade" -> new Offer(ModItems.SUN_GREATBLADE.get(), 650);
+            case "moon_dagger" -> new Offer(ModItems.MOON_DAGGER.get(), 420);
+            case "aether_spear" -> new Offer(ModItems.AETHER_SPEAR.get(), 400);
+            case "aether_staff" -> new Offer(ModItems.AETHER_STAFF.get(), 350);
+            case "void_amulet" -> new Offer(ModItems.VOID_AMULET.get(), 280);
+            case "sun_ring" -> new Offer(ModItems.SUN_RING.get(), 250);
+            case "moon_talisman" -> new Offer(ModItems.MOON_TALISMAN.get(), 300);
+            case "greater_aether_fruit" -> new Offer(ModItems.GREATER_AETHER_FRUIT.get(), 120);
             default -> null;
         };
     }
