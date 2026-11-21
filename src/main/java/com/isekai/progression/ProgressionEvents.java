@@ -192,6 +192,27 @@ public final class ProgressionEvents {
         }
     }
 
+    public static boolean consumeMana(ServerPlayer player, double amount) {
+        if (amount <= 0.0D) {
+            return true;
+        }
+        CompoundTag progress = getProgress(player);
+        double current = progress.getDouble(MANA_KEY);
+        if (current < amount) {
+            return false;
+        }
+        progress.putDouble(MANA_KEY, current - amount);
+        return true;
+    }
+
+    public static double getCurrentMana(ServerPlayer player) {
+        return getProgress(player).getDouble(MANA_KEY);
+    }
+
+    public static double getMaximumMana(ServerPlayer player) {
+        return maxMana(getProgress(player));
+    }
+
     private static int allocatePoints(ServerPlayer player, String stat, int amount) {
         String key = switch (stat) {
             case "strength" -> STRENGTH_KEY;
