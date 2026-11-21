@@ -8,6 +8,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -86,17 +87,17 @@ public class ModItems {
             .nutrition(10).saturationMod(1.0F).alwaysEat().build())));
 
     public static final RegistryObject<Item> AETHER_SENTINEL_SPAWN_EGG = ITEMS.register("aether_sentinel_spawn_egg",
-        () -> new SpawnEggItem(ModEntities.AETHER_SENTINEL.get(), 0x26364A, 0x48C8E8, new Item.Properties()));
+        () -> new ForgeSpawnEggItem(ModEntities.AETHER_SENTINEL, 0x26364A, 0x48C8E8, new Item.Properties()));
     public static final RegistryObject<Item> AETHER_STALKER_SPAWN_EGG = ITEMS.register("aether_stalker_spawn_egg",
-        () -> new SpawnEggItem(ModEntities.AETHER_STALKER.get(), 0x18202D, 0xA78BFA, new Item.Properties()));
+        () -> new ForgeSpawnEggItem(ModEntities.AETHER_STALKER, 0x18202D, 0xA78BFA, new Item.Properties()));
     public static final RegistryObject<Item> AETHER_BRUTE_SPAWN_EGG = ITEMS.register("aether_brute_spawn_egg",
-        () -> new SpawnEggItem(ModEntities.AETHER_BRUTE.get(), 0x37313D, 0xD6A84B, new Item.Properties()));
+        () -> new ForgeSpawnEggItem(ModEntities.AETHER_BRUTE, 0x37313D, 0xD6A84B, new Item.Properties()));
     public static final RegistryObject<Item> AETHER_WRAITH_SPAWN_EGG = ITEMS.register("aether_wraith_spawn_egg",
-        () -> new SpawnEggItem(ModEntities.AETHER_WRAITH.get(), 0x17152B, 0x8B5CF6, new Item.Properties()));
+        () -> new ForgeSpawnEggItem(ModEntities.AETHER_WRAITH, 0x17152B, 0x8B5CF6, new Item.Properties()));
     public static final RegistryObject<Item> AETHER_RAVAGER_SPAWN_EGG = ITEMS.register("aether_ravager_spawn_egg",
-        () -> new SpawnEggItem(ModEntities.AETHER_RAVAGER.get(), 0x252A35, 0xD97736, new Item.Properties()));
+        () -> new ForgeSpawnEggItem(ModEntities.AETHER_RAVAGER, 0x252A35, 0xD97736, new Item.Properties()));
     public static final RegistryObject<Item> AETHER_WARDEN_SPAWN_EGG = ITEMS.register("aether_warden_spawn_egg",
-        () -> new SpawnEggItem(ModEntities.AETHER_WARDEN.get(), 0x101A2B, 0x38BDF8, new Item.Properties()));
+        () -> new ForgeSpawnEggItem(ModEntities.AETHER_WARDEN, 0x101A2B, 0x38BDF8, new Item.Properties()));
 
     public static final RegistryObject<Item> AETHER_BLOCK_ITEM = blockItem("aether_block", ModBlocks.AETHER_BLOCK);
     public static final RegistryObject<Item> RAW_AETHER_BLOCK_ITEM = blockItem("raw_aether_block", ModBlocks.RAW_AETHER_BLOCK);
